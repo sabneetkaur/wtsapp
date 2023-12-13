@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- <link rel="stylesheet" href="self whspp.css"> -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-weight:1;
+    cursor: pointer;
+}
+.container{
+    background-color: palegreen;
+    
+}
+.nav{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: rgb(48, 115, 48);
+    height: 110px;
+    width: 100vw;
+}
+.nav h1{
+    color: white;
+    text-transform: capitalize;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+.nav2{
+    display: flex;
+
+}
+.nav2 h2{
+    color: white;
+    background-color:rgb(48, 115, 48) ;
+    height: 30px;
+    width: 100vw;
+    padding-left: 25px;
+    text-transform:capitalize ;
+    padding-top: 17px;
+}
+.chat-container{
+    color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    /* display: none; */
+    position: relative; 
+
+}
+img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-left: 25px;   
+    margin-top: 15px;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: center;
+    align-items: center;
+    position: relative;  */
+}
+.chat-container h2{
+   color: black;
+   position: absolute;
+   margin-left: 110px;
+   margin-top: 25px;
+   text-transform: capitalize;
+
+}
+.chat-container h3{
+    margin-left: 23px;
+    margin-top: 60px;
+    color: black;
+    opacity: 0.6;
+}
+.c2{
+    display: flex;
+    flex-direction: row;
+}
+.c2 h2{
+    color: black;
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 22px;
+    text-transform: capitalize;
+}
+.c2 h3{
+    margin-left: 23px;
+    margin-top: 50px;
+    color: black;
+    opacity: 0.6;
+}
+.c3{
+    display: flex;
+    flex-direction: row;
+}
+.c3 h2{
+    color: black;
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 22px;
+    text-transform: capitalize;
+}
+.c3 h3{
+    margin-left: 23px;
+    margin-top: 50px;
+    color: black;
+    opacity: 0.6;
+}
+.c4{
+    display: flex;
+    flex-direction: row;
+}
+.c4 h2{
+    color: black;
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 22px;
+    text-transform: capitalize;
+}
+.c4 h3{
+    margin-left: 23px;
+    margin-top: 50px;
+    color: black;
+    opacity: 0.6;
+}
+.c5{
+    display: flex;
+    flex-direction: row;
+}
+.c5 h2{
+    color: black;
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 22px;
+    text-transform: capitalize;
+}
+.c5 h3{
+    margin-left: 23px;
+    margin-top: 52px;
+    color: black;
+    opacity: 0.6;
+}
+.c4:hover{
+    background-color: gainsboro;
+}
+.c3:hover{
+    background-color: gainsboro;
+}
+.c2:hover{
+    background-color: gainsboro;
+}
+.chat-container:hover{
+    background-color: gainsboro;
+}
+.c5:hover{
+    background-color: gainsboro;
+}
+
+.page{
+    height: 1000px;
+    width: 1300px;
+    background-color: aquamarine;
+    
+}
+.clas{
+height: 480px; 
+width:100vw;
+margin-right: 500px;
+background-color: white;
+display: none;
+/* border-bottom: 2px solid grey; */
+}
+.plus{
+    position:absolute;
+    margin-left:75px;
+ margin-top:60px;
+ font-size:30px;
+ background-color: #2e7934;
+ border-radius: 50%;
+ color:white;
+ height:28px;
+ width:27px;
+ text-align:center;
+}
+.text{
+    margin-left:110px;
+    margin-top:28px;
+    position:absolute;
+
+}
+.text h3{
+    opacity: 0.5;
+}
+.update{
+    border-top: 0.1px solid grey;
+    /* box-shadow: 2px 2px soild grey; */
+}
+.clas h4{
+    margin-left: 14px;
+    opacity: 0.7;
+}
+.box{
+    background-color: green;
+    height:70px;
+      width:68px;
+      border-radius:50%;
+      margin-left:25px;
+      position:absolute;
+      margin-top:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+  }
+  #i2{
+      height:63px;
+      width:60px;
+      margin-left:0.80px;
+      margin-top:0.5px;
+      position:absolute;
+      
+  }
+  .text2{
+    margin-top:110px;
+    margin-left:110px;
+    position:absolute;
+
+}
+.text2 h3{
+    opacity: 0.5;
+}
+.box2{
+      background-color: green;
+  height:70px;
+    width:68px;
+    border-radius:50%;
+  margin-left:25px;
+  margin-top:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+/*     position:absolute; */
+  
+}
+#i3{
+       height:63px;
+    width:60px;
+    margin-left:0.80px;
+    margin-top:0.5px;
+    position:absolute;
+}
+#i3{
+    height:63px;
+ width:60px;
+ margin-left:0.80px;
+ margin-top:0.5px;
+ position:absolute;
+}
+ .text3{
+ margin-top:20px;
+ margin-left:110px;
+ position:absolute;
+
+}
+.text3 h3{
+ opacity: 0.5;
+}
+.box3{
+   background-color: gray;
+height:70px;
+ width:68px;
+ border-radius:50%;
+margin-left:25px;
+margin-top:19px;
+display:flex;
+align-items:center;
+justify-content:center;
+/*     position:absolute; */
+
+}
+#i4{
+    height:63px;
+ width:60px;
+ margin-left:0.80px;
+ margin-top:0.5px;
+ position:absolute;
+}
+
+.call{
+    height: 480px; 
+    width:100vw;
+    margin-right: 500px;
+    background-color: white;
+    display: none;
+    position: relative;
+    /* border-bottom: 2px solid grey; */
+    }
+    .emoji{
+        font-size: 43px;
+     position:absolute;
+     background-color:#2e7934;
+     border-radius:50%;
+     margin-left:25px;
+     margin-top:19px;
+    }
+  .recent{
+    margin-top:85px;
+    position:absolute;
+    margin-left:25px;
+    text-transform: capitalize;
+  }
+    .recent h3{
+        /* margin-top:190px;
+        position:absolute;
+        margin-left:25px; */
+       }
+       .ii{
+        margin-top:100px;
+        position:absolute;
+        
+       }
+ .texta{
+  /* margin-top:120px;
+  position:absolute;
+  margin-left:120px; */
+ }
+ .texta h3{
+    opacity: 0.7;
+    margin-top:160px;
+  position:absolute;
+  margin-left:145px;
+ }
+ .texta h2{
+    margin-top:125px;
+    position:absolute;
+    margin-left:120px;
+ }
+ .texta h1{
+    font-size:27px;
+ /* margin-right:20px; */
+ margin-top:150px;
+ position:absolute;
+ color: rgb(8, 169, 70);
+ margin-left:115px;
+ }
+ .phone{
+    font-size:25px;
+    position:absolute;
+    /* margin-left:1140px; */
+    margin-left: 90vw;
+    margin-top:120px;
+    color: #2e7934;
+   }
+   .ii2{
+    margin-top:190px;
+    position:absolute;
+    
+   }
+.textb{
+margin-top:210px;
+position:absolute;
+margin-left:120px;
+}
+.textb h1{
+    font-size:27px;
+ margin-right:20px;
+ position:absolute;
+ color: red;
+}
+.textb h2{
+    color: red;
+}
+.textb h3{
+ margin-left:30px;
+ opacity: 0.7;
+}
+
+.phone2{
+font-size:25px;
+    margin-left: 90vw;
+    margin-top:210px;
+    position:absolute;
+    color: #2e7934;
+}
+.ii3{
+    margin-top:280px;
+    position:absolute;
+    
+   }
+.textc{
+/* margin-top:300px;
+position:absolute;
+margin-left:120px; */
+}
+.textc h3{
+    opacity: 0.7;
+    margin-top:330px;
+  position:absolute;
+  margin-left:150px;
+ }
+ .textc h2{
+    margin-top:300px;
+    position:absolute;
+    margin-left:130px;
+ }
+ .textc h1{
+    font-size:27px;
+ /* margin-right:20px; */
+ margin-top:330px;
+ position:absolute;
+ color: rgb(8, 169, 70);
+ margin-left:120px;
+ }
+.phone3{
+font-size:25px;
+color: #2e7934;
+    margin-left: 90vw;
+    margin-top:300px;
+    position:absolute;
+}
+.right{
+    position:absolute;
+   }
+   .right h1{
+    margin-left:66vw;
+    padding:6px;
+    color: white;
+    font-size: 22px;
+    margin-top:8px;
+   }
+   .n1{
+    position:absolute;
+        margin-left:80vw;
+    margin-top:18px;
+   }
+   .n1 h2{
+    color:white;
+    font-size:22px;
+   }
+   .dot i{
+        color: white;
+        font-size:22px;
+        position:absolute;
+        margin-left:91vw;
+        margin-top:18px;
+       }
+   .right h1 i{
+    /* color: transparent; */
+    /* border: 2px solid black; */
+    /* color: #2e7934; */
+   } 
+   #ss{
+    cursor: pointer;
+   }
+   #status{
+    cursor: pointer;
+   }
+#cal{
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <div class="nav">
+            <div class="dot">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+            <div class="n1"> <h2><i class="fa-sharp fa-solid fa-magnifying-glass"></i><h2></div>
+            <div class="right">
+                <h1><i class="fas fa-camera"></i></h1>
+               <!-- <div class="n1"> <h2>🔍<h2></div> -->
+                <!-- <div class="dot">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </div> -->
+              
+            </div>
+            <div class="w">
+            <h1>whatsapp</h1>
+            <!-- <div class="right">
+                <h1>📷</h1>
+            </div> -->
+        </div>
+            <div class="nav2">
+                <h2 id="ss" onclick="cc()">chats </h2>
+                <h2 id="status"onclick="page()">status</h2>
+                <h2 id="cal" onclick="kl()">calls</h2>
+            </div>
+        </div>
+        <!-- <div class="nav2"> -->
+            <div class="clas">
+                <div class="plus">+</div>
+                <div class="text"> <h2>my status</h2>
+                    <h3>tap to add status</h3>
+                    </div>
+                
+                <img id="i" src = "https://media.istockphoto.com/id/1300296030/photo/tropical-beach-palm-trees-sea-wave-and-white-sand.jpg?s=612x612&w=0&k=20&c=6xdlJDxSp5FVUpQC7AOt3ooHYPd3-gTQNF6lmwX5krk=">
+
+
+           <h4>Updated Status</h4>
+
+            <div class="update">
+                <div class="text"> <h2>Sabneet Kaur</h2>
+                    <h3>last 30 min ago</h3>
+                    </div>
+                    <div class="box">
+                    <img id="i2" src = "https://d2779tscntxxsw.cloudfront.net/587545ab5a65e.jpeg?width=650&quality=80">
+
+                    </div>
+                    <!-- <div class="u2"> -->
+                        <!-- <div class="hover2"> -->
+                    <div class="text2"> <h2>Arnaz Kaur</h2>
+                        <h3>today 10.30pm</h3>
+                        </div>
+                        <div class="box2">
+                        <img id="i3" src = "https://media.istockphoto.com/id/1460007248/photo/library-research-and-row-of-books-on-bookshelf-for-reading-knowledge-and-educational-learning.jpg?s=1024x1024&w=is&k=20&c=7ZOZalqer_eEnktZa17lgXxEQD1imy580q6QUONwo0A=">
+                        <!-- </div> -->
+                    </div>
+                        <h4>Viewed Status</h4>
+                        <div class="text3"> <h2>Mandeep Kaur</h2>
+                            <h3>yesterday</h3>
+                            </div>
+                            <div class="box3">
+                            <img id="i4" src = "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?cs=srgb&dl=pexels-jane-doan-1132047.jpg&fm=jpg">
+                            </div>
+                            <div class="text3"> <h2>preet</h2>
+                                <h3>2 hour ago</h3>
+                                </div>
+                                <div class="box3">
+                                <img id="i4" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEEuhG3phs8Z-85Vlx9uESkhPej3NCBJzwgWxiXq1&s">
+                                </div>
+                                <div class="text3"> <h2>kaur</h2>
+                                    <h3>today 11.00am</h3>
+                                    </div>
+                                    <div class="box3">
+                                    <img id="i4" src = "https://media.istockphoto.com/id/1300296030/photo/tropical-beach-palm-trees-sea-wave-and-white-sand.jpg?s=612x612&w=0&k=20&c=6xdlJDxSp5FVUpQC7AOt3ooHYPd3-gTQNF6lmwX5krk=">
+                                    </div>
+                    <!-- </div> -->
+
+            </div>
+            </div>
+            <div class="call">
+                <div class="emoji">🔗</div>
+                <div class="text"> <h2>create call links</h2>
+                    <h3>share a link for call</h3>
+                </div>
+                <div class="sec">
+                    <div class="recent">
+                        <h3>recent</h3>
+                    </div>
+                    <div class="texta">
+                        <h2>sabneet kaur</h2>
+                        <h1>↗</h1>
+                        <h3>58 min ago</h3>
+                    </div>
+                    <div class="phone"><i class="fa-solid fa-video"></i></div>
+                    <div class="ii">
+                 <img id="inner" src="https://media.istockphoto.com/id/1300296030/photo/tropical-beach-palm-trees-sea-wave-and-white-sand.jpg?s=612x612&w=0&k=20&c=6xdlJDxSp5FVUpQC7AOt3ooHYPd3-gTQNF6lmwX5krk=">
+                    </div>
+                </div>
+
+                <div class="textb">
+                    <h2>arnaz kaur</h2>
+                    <h1>↙</h1>
+                    <h3>yesterday 3:28 pm</h3>
+                </div>
+                <div class="phone2"><i class="fa-solid fa-phone"></i></div>
+                <div class="ii2">
+             <img id="inner2" src="https://d2779tscntxxsw.cloudfront.net/587545ab5a65e.jpeg?width=650&quality=80">
+                </div>
+            <!-- </div> -->
+            <div class="textc">
+                <h2>kaur</h2>
+                <h1>↙</h1>
+                <h3>last sunday</h3>
+            </div>
+            <div class="phone3"><i class="fa-solid fa-video"></i></div>
+            <div class="ii3">
+         <img id="inner3" src="https://media.istockphoto.com/id/1460007248/photo/library-research-and-row-of-books-on-bookshelf-for-reading-knowledge-and-educational-learning.jpg?s=1024x1024&w=is&k=20&c=7ZOZalqer_eEnktZa17lgXxEQD1imy580q6QUONwo0A=">
+            </div>
+        </div>
+
+                    </div>
+            <!-- <h2>chats</h2>
+            <h2 id="status"onclick="page()">status</h2> -->
+<!-- <div class="class">
+    <img id="i" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEEuhG3phs8Z-85Vlx9uESkhPej3NCBJzwgWxiXq1&s">
+    <h2>sehaj</h2>
+</div> -->
+            <!-- <h2>calls</h2> -->
+        </div>
+        <!-- <div class="call">
+            <div class="text"> <h2>my status</h2>
+                <h3>tap to add status</h3>
+                </div> -->
+        <div class="chat-container">
+            <img src="https://d2779tscntxxsw.cloudfront.net/587545ab5a65e.jpeg?width=650&quality=80">
+            <h2>arnaz kaur</h2>
+            <h3>hii arnaz❤️ </h3>
+        </div>
+            <div class="c2">
+                <img src="https://media.istockphoto.com/id/1460007248/photo/library-research-and-row-of-books-on-bookshelf-for-reading-knowledge-and-educational-learning.jpg?s=1024x1024&w=is&k=20&c=7ZOZalqer_eEnktZa17lgXxEQD1imy580q6QUONwo0A=">
+                <h2>sabneet</h2>
+                <h3>good morning sabneet🌄</h3>
+        </div>
+        <div class="c3">
+            <img src="https://media.istockphoto.com/id/1300296030/photo/tropical-beach-palm-trees-sea-wave-and-white-sand.jpg?s=612x612&w=0&k=20&c=6xdlJDxSp5FVUpQC7AOt3ooHYPd3-gTQNF6lmwX5krk=">
+            <h2>mandeep kaur</h2>
+            <h3>what are you doing😊</h3>
+    </div>
+    <div class="c4">
+        <img src="https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?cs=srgb&dl=pexels-jane-doan-1132047.jpg&fm=jpg">
+        <h2>kaur</h2>
+        <h3>nice pic👌</h3>
+</div>
+<div class="c5">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiEEuhG3phs8Z-85Vlx9uESkhPej3NCBJzwgWxiXq1&s">
+    <h2>preet</h2>
+    <h3>who are you?</h3>
+</div>
+    </div>
+    
+
+
+
+
+
+    <!-- <script src="self whspp.js"> -->
+<script>
+    let s=document.querySelector("#status")
+let chat= document.querySelector(".chat-container")
+let ss=document.querySelector("#ss")
+var c2=document.querySelector(".c2")
+var c3=document.querySelector(".c3")
+var c4=document.querySelector(".c4")
+var c5=document.querySelector(".c5")
+var clas=document.querySelector(".clas")
+let call=document.querySelector(".call")
+let a=document.querySelector("#cal")
+
+
+function page(){
+    clas.style.display="block";
+    s.style.borderBottom="3px solid white";
+    ss.style.borderBottom="none";
+    chat.style.display="none";
+    c2.style.display="none";
+    c3.style.display="none";
+    c4.style.display="none";
+    c5.style.display="none";
+    a.style.borderBottom="none";
+    call.style.display="none";
+};
+function cc(){
+    ss.style.borderBottom="3px solid white";
+    a.style.borderBottom="none";
+    clas.style.display="none";
+    s.style.borderBottom="none";
+    chat.style.display="flex";
+    c2.style.display="flex";
+    c3.style.display="flex";
+    c4.style.display="flex";
+    c5.style.display="flex";
+    chat.style.marginTop="flex";
+    call.style.display="none";
+}
+function kl(){
+    call.style.display="block";
+    a.style.borderBottom="3px solid white";
+    s.style.borderBottom="none";
+    clas.style.display="none";
+   chat.style.display="none";
+   c2.style.display="none";
+   c3.style.display="none";
+   c4.style.display="none";
+   c5.style.display="none";
+}
+</script>
+    
+</body>
+</html>
